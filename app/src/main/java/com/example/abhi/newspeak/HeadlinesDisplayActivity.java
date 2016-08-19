@@ -18,7 +18,7 @@ public class HeadlinesDisplayActivity extends AppCompatActivity {
 
         RecyclerAdapter adapter = new RecyclerAdapter(this);
         headlinesRecyclerView.setAdapter(adapter);
-        headlinesRecyclerView.setHasFixedSize(true);
+        //headlinesRecyclerView.setHasFixedSize(false);
 
         //layouut manager for recylerView
         headlinesRecyclerView.setLayoutManager(new LinearLayoutManager(this));

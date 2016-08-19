@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         btnGetHeadlines = (Button) findViewById(R.id.button);
         intent = new Intent(this, HeadlinesDisplayActivity.class);
         btnGetHeadlines.setOnClickListener(new View.OnClickListener() {
