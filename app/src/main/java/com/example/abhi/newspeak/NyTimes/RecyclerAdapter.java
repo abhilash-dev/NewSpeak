@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
 import com.example.abhi.newspeak.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -69,7 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                     news.setImgUrl("https://placehold.it/350x150");
                     news.setImgCaption("Sample Image Caption");
                 } else {
-                    JSONObject multimediaObject = multimedia.getJSONObject(4);
+                    JSONObject multimediaObject = multimedia.getJSONObject(multimedia.length() - 1);
 
                     news.setImgUrl(multimediaObject.getString("url"));
                     news.setImgCaption(multimediaObject.getString("caption"));
@@ -80,16 +81,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         // dummy data to check for recyclerView's 5 size error
 
-        for (int i = 0; i < num_results; i++) {
+        /*for (int i = 0; i < num_results; i++) {
             News news = new News();
             news.setTitle("Title " + i);
             news.setDescription("Sample Description " + i);
             news.setImgUrl("https://placehold.it/350x150");
             NYTnews.add(news);
-        }
+        }*/
     }
 
     @Override
@@ -104,13 +104,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         RecyclerViewHolder viewHolder = (RecyclerViewHolder) holder;
 
-        News news = new News();
-        news = NYTnews.get(position);
+        News newsObject = new News();
+        newsObject = NYTnews.get(position);
 
-        viewHolder.tvListItemTitle.setText(news.getTitle());
-        viewHolder.tvListItemDescription.setText(news.getDescription());
-        //viewHolder.ivListItemAvatar.setImageBitmap(bitmap);
-
+        viewHolder.tvListItemTitle.setText(newsObject.getTitle());
+        viewHolder.tvListItemDescription.setText(newsObject.getDescription());
+        ImageLoader.getInstance().displayImage(newsObject.getImgUrl(), viewHolder.ivListItemAvatar); // Default options will be used
     }
 
     @Override

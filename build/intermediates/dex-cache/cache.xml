@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\abhil\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.5\442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\universal-image-loader-1.9.5_b26a82e65cb6abb5646768b8965a16d8716f588f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ba42374b741af34d35f7b881a75d9b51a1a5ed87">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c2c71924bc8ab8131469fdbc47987302269b98d9\classes.dex" />
+    </item>
+
+</items>
