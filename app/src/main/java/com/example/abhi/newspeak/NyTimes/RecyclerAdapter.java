@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
 import com.example.abhi.newspeak.R;
 
 import org.json.JSONArray;
@@ -23,6 +24,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -33,14 +36,60 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     Context context;
     LayoutInflater inflater;
-    JSONObject resultObject;
-    Bitmap bitmap;
+    private List<News> NYTnews;
+    JSONObject jsonObject;
+    int num_results;
 
-    public RecyclerAdapter(Context context, JSONObject resultObject,Bitmap bitmap) {
+    public RecyclerAdapter(Context context, String json) {
         this.context = context;
         inflater = LayoutInflater.from(context);
-        this.resultObject = resultObject;
-        this.bitmap = bitmap;
+        try {
+            jsonObject = new JSONObject(json);
+            num_results = jsonObject.getInt("num_results");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        this.NYTnews = new ArrayList<>();
+        parseJSON(jsonObject);
+    }
+
+    public void parseJSON(JSONObject jsonObject) {
+        try {
+            JSONObject resultObject;
+            for (int i = 0; i < num_results; i++) {
+                resultObject = jsonObject.getJSONArray("results").getJSONObject(i);
+                News news = new News();
+
+                news.setTitle(resultObject.getString("title"));
+                news.setDescription(resultObject.getString("abstract"));
+                news.setFullNewsUrl(resultObject.getString("url"));
+
+                JSONArray multimedia = resultObject.getJSONArray("multimedia");
+                if (multimedia.length() == 0) {
+                    news.setImgUrl("https://placehold.it/350x150");
+                    news.setImgCaption("Sample Image Caption");
+                } else {
+                    JSONObject multimediaObject = multimedia.getJSONObject(4);
+
+                    news.setImgUrl(multimediaObject.getString("url"));
+                    news.setImgCaption(multimediaObject.getString("caption"));
+                }
+
+                NYTnews.add(news);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // dummy data to check for recyclerView's 5 size error
+
+        for (int i = 0; i < num_results; i++) {
+            News news = new News();
+            news.setTitle("Title " + i);
+            news.setDescription("Sample Description " + i);
+            news.setImgUrl("https://placehold.it/350x150");
+            NYTnews.add(news);
+        }
     }
 
     @Override
@@ -54,20 +103,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         RecyclerViewHolder viewHolder = (RecyclerViewHolder) holder;
-        try {
-            if (resultObject != null) {
-                viewHolder.tvListItemTitle.setText(resultObject.getString("title"));
-                viewHolder.tvListItemDescription.setText(resultObject.getString("abstract"));
-                viewHolder.ivListItemAvatar.setImageBitmap(bitmap);
-            }
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        News news = new News();
+        news = NYTnews.get(position);
+
+        viewHolder.tvListItemTitle.setText(news.getTitle());
+        viewHolder.tvListItemDescription.setText(news.getDescription());
+        //viewHolder.ivListItemAvatar.setImageBitmap(bitmap);
+
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return num_results;
     }
 }

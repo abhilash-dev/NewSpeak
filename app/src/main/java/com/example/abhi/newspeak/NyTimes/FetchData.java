@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.abhi.newspeak.*;
+import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,8 +30,7 @@ public class FetchData extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerAdapter adapter;
-    List<NYTimesTechPopular> NYTnews;
-    private JSONObject resultObject;
+    List<News> NYTnews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +38,9 @@ public class FetchData extends AppCompatActivity {
         setContentView(R.layout.fetch_data);
         NYTnews = new ArrayList<>();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        try {
-            new GetJSON().execute("https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=ccde25f273d54d74be7269f71376890c").get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+
+        new GetJSON().execute("https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=ccde25f273d54d74be7269f71376890c");
+
     }
 
     private class GetJSON extends AsyncTask<String, String, String> {
@@ -52,7 +48,6 @@ public class FetchData extends AppCompatActivity {
 
         HttpURLConnection connection = null;
         BufferedReader reader = null;
-        private String imgURL;
 
         @Override
         protected String doInBackground(String... strings) {
@@ -94,28 +89,19 @@ public class FetchData extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            try {
-                /*JSONObject fullNews = new JSONObject(s);
-                JSONArray resultsArray = fullNews.getJSONArray("results");
-                resultObject = resultsArray.getJSONObject(0);*/
-                resultObject = new JSONObject(s).getJSONArray("results").getJSONObject(0);
+        protected void onPostExecute(String json) {
+            super.onPostExecute(json);
 
-                imgURL = resultObject.getJSONArray("multimedia").getJSONObject(0).getString("url");
-                //System.out.println(imgURL);
-                new LoadImage().execute(imgURL).get();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
+            // calling adapter after json is fetched
+            adapter = new RecyclerAdapter(FetchData.this, json);
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(FetchData.this));
+
+
         }
     }
 
-    private class LoadImage extends AsyncTask<String, String, Bitmap> {
+   /* private class LoadImage extends AsyncTask<String, String, Bitmap> {
 
 
         protected Bitmap doInBackground(String... args) {
@@ -133,12 +119,12 @@ public class FetchData extends AppCompatActivity {
 
             if (bitmap != null) {
                 // calling adapter after json is fetched
-                adapter = new RecyclerAdapter(FetchData.this, resultObject,bitmap);
+                adapter = new RecyclerAdapter(FetchData.this, resultObject, bitmap);
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(FetchData.this));
             }
         }
-    }
+    }*/
 
 
 }
