@@ -1,5 +1,7 @@
 package com.example.abhi.newspeak.NyTimes;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -48,6 +50,20 @@ public class FetchData extends AppCompatActivity {
 
         HttpURLConnection connection = null;
         BufferedReader reader = null;
+        private ProgressDialog progressDialog = new ProgressDialog(FetchData.this);
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog.setMessage("Grab a cup of coffee, we are fetching latest news!");
+            progressDialog.show();
+            progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                public void onCancel(DialogInterface arg0) {
+                    GetJSON.this.cancel(true);
+                }
+            });
+        }
 
         @Override
         protected String doInBackground(String... strings) {
@@ -91,40 +107,13 @@ public class FetchData extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             super.onPostExecute(json);
+            // end process dialog
+            this.progressDialog.dismiss();
 
             // calling adapter after json is fetched
             adapter = new RecyclerAdapter(FetchData.this, json);
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(FetchData.this));
-
-
         }
     }
-
-   /* private class LoadImage extends AsyncTask<String, String, Bitmap> {
-
-
-        protected Bitmap doInBackground(String... args) {
-            Bitmap bitmap = null;
-            try {
-                bitmap = BitmapFactory.decodeStream((InputStream) new URL(args[0]).getContent());
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return bitmap;
-        }
-
-        protected void onPostExecute(Bitmap bitmap) {
-
-            if (bitmap != null) {
-                // calling adapter after json is fetched
-                adapter = new RecyclerAdapter(FetchData.this, resultObject, bitmap);
-                recyclerView.setAdapter(adapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(FetchData.this));
-            }
-        }
-    }*/
-
-
 }
