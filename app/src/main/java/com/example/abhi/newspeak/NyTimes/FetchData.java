@@ -2,8 +2,6 @@ package com.example.abhi.newspeak.NyTimes;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,10 +10,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.abhi.newspeak.*;
 import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,7 +20,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class FetchData extends AppCompatActivity {
 

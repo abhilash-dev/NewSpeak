@@ -94,7 +94,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = inflater.inflate(R.layout.list_item, parent, false);
+        View v = inflater.inflate(R.layout.list_item_big, parent, false);
 
         RecyclerViewHolder viewHolder = new RecyclerViewHolder(v);
         return viewHolder;
