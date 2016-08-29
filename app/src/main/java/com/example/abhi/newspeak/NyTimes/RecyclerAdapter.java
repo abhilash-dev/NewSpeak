@@ -1,16 +1,16 @@
 package com.example.abhi.newspeak.NyTimes;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
+import com.example.abhi.newspeak.NyTimes.TopStories.Technology.WebViewActivity;
 import com.example.abhi.newspeak.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -18,16 +18,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Created by abhil on 19-08-2016.
@@ -81,15 +73,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        // dummy data to check for recyclerView's 5 size error
-
-        /*for (int i = 0; i < num_results; i++) {
-            News news = new News();
-            news.setTitle("Title " + i);
-            news.setDescription("Sample Description " + i);
-            news.setImgUrl("https://placehold.it/350x150");
-            NYTnews.add(news);
-        }*/
     }
 
     @Override
@@ -110,6 +93,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         viewHolder.tvListItemTitle.setText(newsObject.getTitle());
         viewHolder.tvListItemDescription.setText(newsObject.getDescription());
         ImageLoader.getInstance().displayImage(newsObject.getImgUrl(), viewHolder.ivListItemAvatar); // Default options will be used
+        viewHolder.tvListItemReadMore.setOnClickListener(new ReadMoreClickListener(newsObject.getFullNewsUrl()));
+    }
+
+    private class ReadMoreClickListener extends AppCompatActivity implements View.OnClickListener {
+
+        private String fullNewsURL;
+
+        public ReadMoreClickListener(String fullNewsURL) {
+            this.fullNewsURL = fullNewsURL;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(fullNewsURL),context,WebViewActivity.class);
+            browserIntent.putExtra("fullNewsUrl",fullNewsURL);
+            context.startActivity(browserIntent);
+        }
     }
 
     @Override
