@@ -3,11 +3,13 @@ package com.example.abhi.newspeak.NyTimes;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.abhi.newspeak.NyTimes.TopStories.Technology.News;
 import com.example.abhi.newspeak.NyTimes.TopStories.Technology.WebViewActivity;
@@ -20,6 +22,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by abhil on 19-08-2016.
@@ -93,22 +96,57 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         viewHolder.tvListItemTitle.setText(newsObject.getTitle());
         viewHolder.tvListItemDescription.setText(newsObject.getDescription());
         ImageLoader.getInstance().displayImage(newsObject.getImgUrl(), viewHolder.ivListItemAvatar); // Default options will be used
-        viewHolder.tvListItemReadMore.setOnClickListener(new ReadMoreClickListener(newsObject.getFullNewsUrl()));
+        viewHolder.tvListItemReadMore.setOnClickListener(new MyClickListener(newsObject.getFullNewsUrl(),newsObject.getTitle(),newsObject.getDescription()));
+        viewHolder.btnPlay.setOnClickListener(new MyClickListener(newsObject.getFullNewsUrl(),newsObject.getTitle(),newsObject.getDescription()));
     }
 
-    private class ReadMoreClickListener extends AppCompatActivity implements View.OnClickListener {
+    private class MyClickListener extends AppCompatActivity implements View.OnClickListener,TextToSpeech.OnInitListener {
 
         private String fullNewsURL;
+        private String title;
+        private String description;
+        TextToSpeech tts = new TextToSpeech(context,this);
 
-        public ReadMoreClickListener(String fullNewsURL) {
+        public MyClickListener(String fullNewsURL,String title,String description) {
             this.fullNewsURL = fullNewsURL;
+            this.title = title;
+            this.description = description;
         }
 
         @Override
         public void onClick(View view) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(fullNewsURL),context,WebViewActivity.class);
-            browserIntent.putExtra("fullNewsUrl",fullNewsURL);
-            context.startActivity(browserIntent);
+            switch (view.getId()){
+                case R.id.list_item_read_more:
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(fullNewsURL),context,WebViewActivity.class);
+                    browserIntent.putExtra("fullNewsUrl",fullNewsURL);
+                    context.startActivity(browserIntent);
+                    break;
+                case R.id.play:
+                    /*speak(title);
+                    speak(description);*/
+                    tts.speak(title,TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak(description,TextToSpeech.QUEUE_ADD,null);
+                    break;
+            }
+
+        }
+
+        /*public void speak(String text){
+            tts.speak(text,TextToSpeech.QUEUE_FLUSH,null);
+        }*/
+
+        @Override
+        public void onInit(int i) {
+            if(i==TextToSpeech.SUCCESS){
+                Locale locale = tts.getLanguage();
+                int result = tts.setLanguage(locale);
+
+                if(result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                    Toast.makeText(context, "Language is not supported", Toast.LENGTH_SHORT).show();
+                }
+            }else {
+                Toast.makeText(context, "TTS Init failed", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

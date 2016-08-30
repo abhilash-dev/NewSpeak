@@ -1,3 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.0_58d275dbd91810aeb1a3c346c6bfc612f69e9407\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.0_ac0619ac184aaf0a75e30ef14967fae85fefcf27\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.0_4bc22bb7a0458af74985d6700b0cb1f62b4d3e2f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.0_8b9380581072620dcac3132a49eb8c0f84b3cfdd\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.0_8e18975a41c2ef992401d3ed668761f67d8f61a7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="399caf2083f4907473e80d917d4fab497eeda1f2">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c2c71924bc8ab8131469fdbc47987302269b98d9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.0_37a5298f98e5f9a20925e47d22eb15b2becb62b1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_5de6276a74db13c1b611a96a37e25e1f0d4d418f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_267510755f1d06c217fa32bbe58ba1b075d04633\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.0_8e045c7d4ca5a5fe6a9a442c52c71eebbb562c2c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_8a250aa6d8e7dd2dd4ec5660139770c4d99c5b2d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_61933c410c2b73551822745c0ac8cf2ade6e2220\classes.dex" />
+    </item>
+    <item
+        jar="F:\SDK\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.0_e2c622253ea2e88fa981039db4bead3932839a0f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.5\442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375\universal-image-loader-1.9.5.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\universal-image-loader-1.9.5_b26a82e65cb6abb5646768b8965a16d8716f588f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.2.0_e173ff26eb0b7977aaab150f9a11a64ff776f13f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="58948ab65f3b781c27e467a0c2218406284f695b">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ccc90c62c00e371294ca86479d54c2094449218d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\.gradle\caches\modules-2\files-2.1\com.alexvasilkov\foldable-layout\1.2.0\134b63d8b604479ffb03ae58d271eb2dc580d9cc\foldable-layout-1.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="134b63d8b604479ffb03ae58d271eb2dc580d9cc">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\foldable-layout-1.2.0_4ecea49834e6637ab350f25e43f56159b4478393\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.0_9d4a4e5d93cb5c3514607f55e01c1d73273cc99d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_22c529c2aea65e3ea25a259dd3831739f42aadc2\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-5.1.1_41c50993f88710065458154304089144f210a1c1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_2b822e85f1dbbcff37e7e1f9b378a3caff645ac1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.0_69fd64348090e3be8278963434fba9f3a5099cf4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\abhil\AndroidStudioProjects\NewSpeak\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.0_f21db74b2f844cbcda8ad8ecd12ec69c29e694cc\classes.dex" />
+    </item>
+
+</items>
