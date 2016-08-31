@@ -22,7 +22,7 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.main);
 
         // Create default options which will be used for every
-//  displayImage(...) call if no options will be passed to this method
+        //  displayImage(...) call if no options will be passed to this method
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
 
                 .cacheInMemory(true)

@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        initImageLoader();
+    }
 
+    void initImageLoader() {
         // Create default options which will be used for every
         //  displayImage(...) call if no options will be passed to this method
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
@@ -56,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
                 .build();
         ImageLoader.getInstance().init(config); // Do it on Application start
-
     }
 
     @OnClick({R.id.bt_go, R.id.fab})
