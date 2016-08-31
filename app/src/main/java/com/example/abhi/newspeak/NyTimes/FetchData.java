@@ -26,6 +26,7 @@ public class FetchData extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerAdapter adapter;
     List<News> NYTnews;
+    private String jsonURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,9 @@ public class FetchData extends AppCompatActivity {
         NYTnews = new ArrayList<>();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        new GetJSON().execute("https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=ccde25f273d54d74be7269f71376890c");
+        Bundle bundle = getIntent().getExtras();
+        jsonURL = bundle.getString("jsonURL");
+        new GetJSON().execute(jsonURL);
 
     }
 

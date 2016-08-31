@@ -92,12 +92,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
         News newsObject = new News();
         newsObject = NYTnews.get(position);
+        MyClickListener myClickListener = new MyClickListener(newsObject.getFullNewsUrl(),newsObject.getTitle(),newsObject.getDescription());
 
         viewHolder.tvListItemTitle.setText(newsObject.getTitle());
         viewHolder.tvListItemDescription.setText(newsObject.getDescription());
         ImageLoader.getInstance().displayImage(newsObject.getImgUrl(), viewHolder.ivListItemAvatar); // Default options will be used
-        viewHolder.tvListItemReadMore.setOnClickListener(new MyClickListener(newsObject.getFullNewsUrl(),newsObject.getTitle(),newsObject.getDescription()));
-        viewHolder.btnPlay.setOnClickListener(new MyClickListener(newsObject.getFullNewsUrl(),newsObject.getTitle(),newsObject.getDescription()));
+        viewHolder.tvListItemReadMore.setOnClickListener(myClickListener);
+        viewHolder.btnPlay.setOnClickListener(myClickListener);
     }
 
     private class MyClickListener extends AppCompatActivity implements View.OnClickListener,TextToSpeech.OnInitListener {

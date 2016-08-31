@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.abhi.newspeak.NyTimes.FetchData;
+import com.example.abhi.newspeak.NyTimes.Main;
 import com.example.abhi.newspeak.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 getWindow().setExitTransition(explode);
                 getWindow().setEnterTransition(explode);
                 ActivityOptionsCompat oc2 = ActivityOptionsCompat.makeSceneTransitionAnimation(this);
-                Intent i2 = new Intent(this, FetchData.class);
+                Intent i2 = new Intent(this, Main.class);
                 startActivity(i2, oc2.toBundle());
                 break;
         }
