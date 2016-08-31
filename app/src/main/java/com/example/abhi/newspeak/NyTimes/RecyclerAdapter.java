@@ -122,18 +122,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
                     context.startActivity(browserIntent);
                     break;
                 case R.id.play:
-                    /*speak(title);
-                    speak(description);*/
                     tts.speak(title,TextToSpeech.QUEUE_FLUSH,null);
                     tts.speak(description,TextToSpeech.QUEUE_ADD,null);
                     break;
             }
 
         }
-
-        /*public void speak(String text){
-            tts.speak(text,TextToSpeech.QUEUE_FLUSH,null);
-        }*/
 
         @Override
         public void onInit(int i) {
