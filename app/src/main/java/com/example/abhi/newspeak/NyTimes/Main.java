@@ -17,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.abhi.newspeak.R;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class Main extends AppCompatActivity {
 
@@ -32,8 +34,26 @@ public class Main extends AppCompatActivity {
         MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this);
         topicsRecyclerView.setAdapter(adapter);
         topicsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        initImageLoader();
     }
+
+    void initImageLoader() {
+        // Create default options which will be used for every
+        //  displayImage(...) call if no options will be passed to this method
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+
+                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext())
+
+                .defaultDisplayImageOptions(defaultOptions)
+
+                .build();
+        ImageLoader.getInstance().init(config); // Do it on Application start
+    }
+
 
     private class MyRecyclerViewAdapter extends RecyclerView.Adapter {
 
