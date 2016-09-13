@@ -107,7 +107,7 @@ public class Main extends AppCompatActivity {
             MyRecyclerViewHolder viewHolder = (MyRecyclerViewHolder) holder;
             OnTopicClickListener onTopicClickListener = new OnTopicClickListener(jsonList[position]);
 
-            ImageLoader.getInstance().displayImage("https://placehold.it/450x200", viewHolder.ivTopicAvatar); // Default options will be used
+           // ImageLoader.getInstance().displayImage("https://placehold.it/450x200", viewHolder.ivTopicAvatar); // Default options will be used
 
             /*SpannableStringBuilder builder = new SpannableStringBuilder();
             builder.append(topics[position]).append(" ");
@@ -142,13 +142,13 @@ public class Main extends AppCompatActivity {
 
     private class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView ivTopicAvatar;
+        //ImageView ivTopicAvatar;
         TextView tvTopicTitle;
 
         public MyRecyclerViewHolder(View itemView) {
             super(itemView);
 
-            ivTopicAvatar = (ImageView) itemView.findViewById(R.id.topic_list_item_avatar);
+           // ivTopicAvatar = (ImageView) itemView.findViewById(R.id.topic_list_item_avatar);
             tvTopicTitle = (TextView) itemView.findViewById(R.id.topic_list_item_title);
 
             Typeface face = Typeface.createFromAsset(getAssets(), "fonts/FHACondFrenchNC.ttf");
